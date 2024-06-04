@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "21aa6886-e178-4991-ad35-697a6647a146",
+		"name": "Service Auth CRUD REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24349141"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "admin@test.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "rahasia",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE-URL}}/user/register",
+					"host": [
+						"{{BASE-URL}}"
+					],
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "admin@test.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "rahasia",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE-URL}}/user/login",
+					"host": [
+						"{{BASE-URL}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Produk",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE-URL}}/produk",
+					"host": [
+						"{{BASE-URL}}"
+					],
+					"path": [
+						"produk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create produk",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTc1MTU4MjB9.dYHWGKvca74LKvX5FDtxHF-MTTz0t3KZ9KJKtHHOIOI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Mix berries",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "37000",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "59",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE-URL}}/produk",
+					"host": [
+						"{{BASE-URL}}"
+					],
+					"path": [
+						"produk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update produk",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTc1MTU4MjB9.dYHWGKvca74LKvX5FDtxHF-MTTz0t3KZ9KJKtHHOIOI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "ginger bread UPDATED NEW",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "19500",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "74",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE-URL}}/produk/:id",
+					"host": [
+						"{{BASE-URL}}"
+					],
+					"path": [
+						"produk",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "33c30953-6745-4537-a2c2-d831547e9141",
+							"description": "produk id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete produk",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTc1MTU4MjB9.dYHWGKvca74LKvX5FDtxHF-MTTz0t3KZ9KJKtHHOIOI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE-URL}}/produk/:id",
+					"host": [
+						"{{BASE-URL}}"
+					],
+					"path": [
+						"produk",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "122f9e43-45de-4171-bf9e-0448fbca9d61",
+							"description": "produk id"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE-URL",
+			"value": "http://localhost:3000"
+		}
+	]
+}
